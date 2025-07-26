@@ -1,0 +1,14 @@
+@FunctionalInterface
+interface MessagePrinter {
+    void print(String message);
+}
+
+public class Greetings {
+    public static void printMessage(MessagePrinter printer, String msg) {
+        printer.print(msg);
+    }
+
+    public static void main(String[] args) {
+        printMessage(message -> System.out.println("Greeting: " + message), "Hello World");
+    }
+}

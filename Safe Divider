@@ -1,0 +1,12 @@
+import java.util.Optional;
+
+public class SafeDivider {
+    public static Optional<Double> divide(double a, double b) {
+        return b == 0 ? Optional.empty() : Optional.of(a / b);
+    }
+
+    public static void main(String[] args) {
+        System.out.println(divide(10, 2).orElse(Double.NaN)); // 5.0
+        System.out.println(divide(10, 0).orElse("Not Allowed")); // Not Allowed
+    }
+}
